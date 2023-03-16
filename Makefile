@@ -1,5 +1,10 @@
 include .env
 
+init:
+	@echo "Copying .env.example to .env..."
+	cp .env.example .env
+	@echo "Initialization complete! Edit the .env file as needed."
+
 # Rule to perform the search for directories
 find:
 	@echo "Searching for list for $(DOMAIN)"
