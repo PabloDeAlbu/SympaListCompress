@@ -8,13 +8,13 @@ init:
 # Rule to perform the search for directories
 find:
 	@echo "Searching for list for $(DOMAIN)"
-	@find $(BASE_DIR) -type d -path '*@$(DOMAIN)' > directories.txt
+	@find $(ARC_DIR) -type d -path '*@$(DOMAIN)' > directories.txt
 	@echo "OK"
 
 # Rule to compress the found directories
 compress:
 	@echo "Compressing archive for $(DOMAIN)"
-	@tar -czf $(DOMAIN).tar.gz --directory=$(BASE_DIR) --files-from=directories.txt
+	@tar -czvf $(DOMAIN).tar.gz --directory=$(ARC_DIR) --files-from=directories.txt
 	@echo "Lists compressed in $(PWD)/$(DOMAIN).tar.gz"
 
 # Default rule
