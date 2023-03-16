@@ -2,7 +2,7 @@ include .env
 
 init:
 	@echo "Copying .env.example to .env..."
-	cp .env.example .env
+	cp .env.EXAMPLE .env
 	@echo "Initialization complete! Edit the .env file as needed."
 
 # Rule to perform the search for directories
